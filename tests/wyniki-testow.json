@@ -1,0 +1,206 @@
+{
+  "data": "2026-11-22",
+  "total": 22,
+  "passed": 22,
+  "failed": 0,
+  "results": [
+    {
+      "id": "T01",
+      "group": "Przykład kontrolny",
+      "name": "Filtr technologii Python daje A i B oraz poprawne statystyki",
+      "input": "dane z karty, filtr: technologia = Python",
+      "expected": "A,B | gotowy 1, w trakcie 1 | Python 2, HTML 1",
+      "got": "A,B | gotowy 1, w trakcie 1 | Python 2, HTML 1",
+      "status": "OK"
+    },
+    {
+      "id": "T02",
+      "group": "Przykład kontrolny",
+      "name": "Dodanie filtra rok 2026 zostawia tylko A",
+      "input": "dane z karty, filtry: technologia = Python ORAZ rok = 2026",
+      "expected": "A",
+      "got": "A",
+      "status": "OK"
+    },
+    {
+      "id": "T03",
+      "group": "Przykład kontrolny",
+      "name": "Stan pośredni: po sprawdzeniu A i B licznik = 2, wynik = A,B",
+      "input": "dane z karty, filtr Python, drugi krok generatora",
+      "expected": "checked 2, wynik A,B",
+      "got": "checked 2, wynik A,B",
+      "status": "OK"
+    },
+    {
+      "id": "T04",
+      "group": "Technologie",
+      "name": "Powtórzona technologia w jednym projekcie nie zawyża statystyki",
+      "input": "[Python, python, PYTHON, HTML] w jednym projekcie",
+      "expected": "Python 1, HTML 1",
+      "got": "Python 1, HTML 1",
+      "status": "OK"
+    },
+    {
+      "id": "T05",
+      "group": "Filtry",
+      "name": "Dwa filtry działają łącznie, a wyczyszczenie przywraca całą listę",
+      "input": "dane z karty: filtr status=gotowy + rok=2026, potem brak filtrów",
+      "expected": "A,C a po wyczyszczeniu A,C,B",
+      "got": "A,C / A,C,B",
+      "status": "OK"
+    },
+    {
+      "id": "T06",
+      "group": "Walidacja",
+      "name": "Projekt bez tytułu nie jest zapisywany i stan się nie zmienia",
+      "input": "tytuł = \"   \"",
+      "expected": "ValidationError, lista nadal 3 rekordy",
+      "got": "ValidationError (title), rekordów 3",
+      "status": "OK"
+    },
+    {
+      "id": "T07",
+      "group": "Sortowanie",
+      "name": "Remis roku rozstrzyga ID, niezależnie od kolejności dodawania",
+      "input": "Z-2 (2026), A-1 (2026), M-3 (2025) dodane w tej kolejności",
+      "expected": "A-1,Z-2,M-3",
+      "got": "A-1,Z-2,M-3 / A-1,Z-2,M-3",
+      "status": "OK"
+    },
+    {
+      "id": "T08",
+      "group": "Przypadki brzegowe",
+      "name": "Pusta lista: zera w statystykach, bez dzielenia przez zero",
+      "input": "[]",
+      "expected": "total 0, gotowy 0, technologii 0, procent 0",
+      "got": "total 0, gotowy 0, technologii 0, procent 0, widocznych 0",
+      "status": "OK"
+    },
+    {
+      "id": "T09",
+      "group": "Dane",
+      "name": "Eksport i ponowny import odtwarzają dane oraz ten sam wynik",
+      "input": "dane z karty → JSON → import → filtr Python",
+      "expected": "3 rekordy, wynik A,B",
+      "got": "3 rekordy, wynik A,B",
+      "status": "OK"
+    },
+    {
+      "id": "T10",
+      "group": "Dane",
+      "name": "Błędny plik nie nadpisuje danych (zła wersja, zły JSON, duplikat ID, rok 1999)",
+      "input": "cztery wadliwe pliki importu",
+      "expected": "4 razy ValidationError, bieżące dane bez zmian",
+      "got": "4 błędy, rekordów 3",
+      "status": "OK"
+    },
+    {
+      "id": "T11",
+      "group": "Sortowanie",
+      "name": "Własne sortowanie zgadza się z wzorcem: dane uporządkowane, odwrócone, z remisem",
+      "input": "n = 100, trzy układy danych, porządek \"najnowsze\"",
+      "expected": "trzy razy ta sama kolejność co Array.prototype.sort",
+      "got": "posortowany: zgodne; odwrocony: zgodne; losowy: zgodne; remis tytułów → A-9,B-2",
+      "status": "OK"
+    },
+    {
+      "id": "T12",
+      "group": "Sortowanie",
+      "name": "Liczba porównań zgadza się ze wzorami n−1 i n(n−1)/2",
+      "input": "n = 10, dane posortowane i odwrócone",
+      "expected": "9 porównań i 45 porównań",
+      "got": "posortowane 9, odwrócone 45",
+      "status": "OK"
+    },
+    {
+      "id": "T13",
+      "group": "Sortowanie",
+      "name": "Sortowanie nie psuje wejścia i jest stabilne",
+      "input": "trzy rekordy z tym samym rokiem i tym samym tytułem",
+      "expected": "wejście bez zmian, kolejność dodania zachowana przy równych kluczach",
+      "got": "wejście P-1,P-2,P-3, wynik P-1,P-2,P-3",
+      "status": "OK"
+    },
+    {
+      "id": "T14",
+      "group": "Tytuły",
+      "name": "Polskie znaki w tytułach: Łódź przed Mapa, ale po Lipiec",
+      "input": "[\"Mapa\", \"Łódź\", \"Lipiec\", \"lódź\"]",
+      "expected": "Lipiec, lódź, Łódź, Mapa",
+      "got": "Lipiec, lódź, Łódź, Mapa",
+      "status": "OK"
+    },
+    {
+      "id": "T15",
+      "group": "Wyszukiwanie",
+      "name": "Trafienie na początku, na końcu i brak wyniku: licznik zawsze n",
+      "input": "n = 100 rekordów, trzy zapytania",
+      "expected": "3 razy sprawdzone 100; wariant \"pierwsze dopasowanie\": 1, 100, 100",
+      "got": "trafienie na początku: 100/1; trafienie na końcu: 100/100; brak wyniku: 100/100",
+      "status": "OK"
+    },
+    {
+      "id": "T16",
+      "group": "Wyszukiwanie",
+      "name": "Fragment opisu znajduje rekord, którego nie znajdzie filtr technologii",
+      "input": "szukam \"gra zręcznościowa\", filtruję technologię \"gra\"",
+      "expected": "wyszukiwanie 1 rekord, filtr 0 rekordów",
+      "got": "wyszukiwanie 1, filtr 0",
+      "status": "OK"
+    },
+    {
+      "id": "T17",
+      "group": "Walidacja",
+      "name": "Identyfikatora nie da się zmienić w edycji",
+      "input": "edycja rekordu A z nowym ID = \"A2\"",
+      "expected": "ValidationError przy polu id",
+      "got": "Identyfikatora nie można zmienić po utworzeniu projektu.",
+      "status": "OK"
+    },
+    {
+      "id": "T18",
+      "group": "Walidacja",
+      "name": "Rok poza zakresem 2000–2100 i zły status są odrzucane",
+      "input": "rok 1999 oraz status \"zrobiony\"",
+      "expected": "dwa razy ValidationError",
+      "got": "year / status",
+      "status": "OK"
+    },
+    {
+      "id": "T19",
+      "group": "Bezpieczeństwo",
+      "name": "Wpisany HTML zostaje tekstem (sprawdzam zapis znaków w rekordzie)",
+      "input": "tytuł \"<img src=x onerror=alert(1)>\"",
+      "expected": "tytuł zapisany znak w znak, bez wycinania",
+      "got": "<img src=x onerror=alert(1)> (w Node bez DOM)",
+      "status": "OK"
+    },
+    {
+      "id": "T20",
+      "group": "Kroki",
+      "name": "Stan pośredni sortowania: po pierwszym wstawieniu B stoi przed C",
+      "input": "dane z karty, porządek \"najnowsze\", krok wstawienia nr 1",
+      "expected": "po kroku: A,B,C → A,C,B w kolejnych wstawieniach",
+      "got": "wstawienia: ABC → ACB, wynik A,C,B",
+      "status": "OK"
+    },
+    {
+      "id": "T21",
+      "group": "Kroki",
+      "name": "Generator kroków daje ten sam wynik co zwykła funkcja",
+      "input": "n = 40 rekordów, porządek \"tytuły\"",
+      "expected": "identyczna kolejność i identyczna liczba porównań",
+      "got": "porównania 398 vs 398, kolejność zgodna",
+      "status": "OK"
+    },
+    {
+      "id": "T22",
+      "group": "Dane",
+      "name": "Zestaw 1000 rekordów przechodzi walidację i filtr liczy n sprawdzeń",
+      "input": "scenariusz większy, 1000 rekordów, filtr status = gotowy",
+      "expected": "1000 sprawdzeń, wynik niepusty",
+      "got": "sprawdzone 1000, wynik 330",
+      "status": "OK"
+    }
+  ]
+}
