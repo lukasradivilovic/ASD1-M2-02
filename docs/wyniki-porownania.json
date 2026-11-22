@@ -1,0 +1,106 @@
+{
+  "ziarno": 2026,
+  "sortowanie": [
+    {
+      "n": 10,
+      "uklad": "posortowany",
+      "porownania": 9,
+      "teoriaMin": 9,
+      "teoriaMax": 45,
+      "zgodneZWzorcem": true
+    },
+    {
+      "n": 10,
+      "uklad": "odwrocony",
+      "porownania": 45,
+      "teoriaMin": 9,
+      "teoriaMax": 45,
+      "zgodneZWzorcem": true
+    },
+    {
+      "n": 10,
+      "uklad": "losowy",
+      "porownania": 36,
+      "teoriaMin": 9,
+      "teoriaMax": 45,
+      "zgodneZWzorcem": true
+    },
+    {
+      "n": 100,
+      "uklad": "posortowany",
+      "porownania": 99,
+      "teoriaMin": 99,
+      "teoriaMax": 4950,
+      "zgodneZWzorcem": true
+    },
+    {
+      "n": 100,
+      "uklad": "odwrocony",
+      "porownania": 4950,
+      "teoriaMin": 99,
+      "teoriaMax": 4950,
+      "zgodneZWzorcem": true
+    },
+    {
+      "n": 100,
+      "uklad": "losowy",
+      "porownania": 2469,
+      "teoriaMin": 99,
+      "teoriaMax": 4950,
+      "zgodneZWzorcem": true
+    },
+    {
+      "n": 1000,
+      "uklad": "posortowany",
+      "porownania": 999,
+      "teoriaMin": 999,
+      "teoriaMax": 499500,
+      "zgodneZWzorcem": true
+    },
+    {
+      "n": 1000,
+      "uklad": "odwrocony",
+      "porownania": 499500,
+      "teoriaMin": 999,
+      "teoriaMax": 499500,
+      "zgodneZWzorcem": true
+    },
+    {
+      "n": 1000,
+      "uklad": "losowy",
+      "porownania": 246322,
+      "teoriaMin": 999,
+      "teoriaMax": 499500,
+      "zgodneZWzorcem": true
+    }
+  ],
+  "wyszukiwanie": [
+    {
+      "n": 100,
+      "przypadek": "trafienie na początku",
+      "zapytanie": "pierwszy znacznik",
+      "wszystkie_trafienia": 1,
+      "sprawdzone_wszystkie": 100,
+      "sprawdzone_pierwsze": 1,
+      "znaleziono_pierwsze": "G-0001"
+    },
+    {
+      "n": 100,
+      "przypadek": "trafienie na końcu",
+      "zapytanie": "ostatni znacznik",
+      "wszystkie_trafienia": 1,
+      "sprawdzone_wszystkie": 100,
+      "sprawdzone_pierwsze": 100,
+      "znaleziono_pierwsze": "G-0100"
+    },
+    {
+      "n": 100,
+      "przypadek": "brak wyniku",
+      "zapytanie": "zzz nie ma takiego projektu",
+      "wszystkie_trafienia": 0,
+      "sprawdzone_wszystkie": 100,
+      "sprawdzone_pierwsze": 100,
+      "znaleziono_pierwsze": null
+    }
+  ]
+}
