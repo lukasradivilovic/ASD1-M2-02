@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio projektów studenckich — ASD1-M2-02</title>
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<header class="topbar">
+  <img class="logo" src="assets/img/logo_uwb.jpeg" alt="Pieczęć Uniwersytetu w Białymstoku">
+  <div class="brand">
+    <h1>Portfolio projektów studenckich</h1>
+    <p>ASD1-M2-02 · Lukaš Radivilovič (93795) · Algorytmy i struktury danych I</p>
+  </div>
+  <nav class="tabs" id="tabs" aria-label="Sekcje aplikacji">
+    <button class="tab" data-tab="projekty" aria-selected="true">Projekty</button>
+    <button class="tab" data-tab="statystyki">Statystyki</button>
+    <button class="tab" data-tab="algorytm">Algorytm</button>
+    <button class="tab" data-tab="porownanie">Porównanie</button>
+    <button class="tab" data-tab="dane">Dane</button>
+    <button class="tab" data-tab="testy">Testy</button>
+  </nav>
+</header>
+
+<main>
+<!-- ================= PROJEKTY ================= -->
+<section id="panel-projekty" class="panel">
+  <div class="layout">
+    <aside class="side">
+      <h2>Szukaj i filtruj</h2>
+      <label for="q">Fragment tytułu lub opisu</label>
+      <input id="q" type="search" placeholder="np. gra" autocomplete="off">
+      <p class="hint">Wyszukiwanie sprawdza fragment tekstu. Filtr technologii poniżej wymaga dokładnej nazwy.</p>
+
+      <label for="f-tech">Technologia (dokładna nazwa)</label>
+      <select id="f-tech"><option value="">wszystkie</option></select>
+
+      <label for="f-year">Rok</label>
+      <select id="f-year"><option value="">wszystkie</option></select>
+
+      <label for="f-status">Status</label>
+      <select id="f-status"><option value="">wszystkie</option></select>
+
+      <button id="clear" class="btn ghost" type="button">Wyczyść filtry</button>
+
+      <h2>Licznik pracy algorytmu</h2>
+      <p class="counter" id="counters">sprawdzone rekordy: 0 · porównania kluczy: 0</p>
+      <p class="hint">Liczę tylko pętle wyszukiwania i sortowania, bez rysowania i walidacji.</p>
+    </aside>
+
+    <div class="center">
+      <div class="toolbar">
+        <div class="order" role="group" aria-label="Porządek listy">
+          <button class="btn order-btn is-on" data-order="najnowsze" type="button">Najnowsze</button>
+          <button class="btn order-btn" data-order="tytuly" type="button">Tytuły A→Ż</button>
+        </div>
+        <p class="result-info" id="result-info">0 projektów</p>
+        <button id="new" class="btn primary" type="button">+ Nowy projekt</button>
+      </div>
+      <div id="cards" class="cards"></div>
+      <p id="empty" class="empty" hidden></p>
+    </div>
+
+    <aside class="detail" id="detail">
+      <p class="hint">Wybierz kartę projektu, żeby zobaczyć pełny opis.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ================= STATYSTYKI ================= -->
+<section id="panel-statystyki" class="panel" hidden>
+  <h2>Podsumowanie widocznej listy</h2>
+  <p class="hint">Statystyki opisują listę po filtrach, więc zmieniają się razem z nią.</p>
+  <div id="stats-boxes" class="boxes"></div>
+  <h3>Częstość technologii</h3>
+  <div id="tech-bars" class="bars"></div>
+</section>
+
+<!-- ================= ALGORYTM ================= -->
+<section id="panel-algorytm" class="panel" hidden>
+  <h2>Przed → decyzja → po</h2>
+  <p class="hint">Wiersze poniżej powstają z wykonania tej samej pętli, którą liczy aplikacja. Pracuję na małym zestawie: pierwsze sześć widocznych projektów.</p>
+  <div class="toolbar">
+    <div class="order" role="group" aria-label="Wybór algorytmu">
+      <button class="btn algo-btn is-on" data-algo="sort" type="button">Sortowanie przez wstawianie</button>
+      <button class="btn algo-btn" data-algo="search" type="button">Wyszukiwanie i filtry</button>
+    </div>
+    <button id="step" class="btn primary" type="button">Krok</button>
+    <button id="all-steps" class="btn" type="button">Wszystkie kroki</button>
+    <button id="reset-steps" class="btn ghost" type="button">Reset</button>
+    <p class="counter" id="step-counter"></p>
+  </div>
+  <div class="table-wrap"><table id="steps-table">
+    <thead><tr><th>#</th><th>Przed</th><th>Decyzja</th><th>Po</th><th>Licznik</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+  <h3>Koszt operacji</h3>
+  <div class="table-wrap"><table class="cost">
+    <thead><tr><th>Operacja</th><th>Najlepszy przypadek</th><th>Najgorszy przypadek</th><th>Pamięć</th></tr></thead>
+    <tbody>
+      <tr><td>wyszukiwanie i filtr (wszystkie dopasowania)</td><td>n sprawdzeń</td><td>n sprawdzeń</td><td>O(k) na wynik</td></tr>
+      <tr><td>sortowanie przez wstawianie</td><td>n − 1 porównań (dane uporządkowane)</td><td>n(n − 1)/2 porównań (dane odwrócone)</td><td>O(n) kopia</td></tr>
+      <tr><td>zliczanie technologii</td><td colspan="2">suma długości list technologii</td><td>O(t)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- ================= PORÓWNANIE ================= -->
+<section id="panel-porownanie" class="panel" hidden>
+  <h2>Porównanie: ile pracy wykonuje algorytm</h2>
+  <p class="hint">Dane generuję powtarzalnie (ziarno 2026), więc liczby są takie same przy każdym uruchomieniu. Wynik sortowania sprawdzam z niezależnym wzorcem, czyli wbudowanym <code>Array.prototype.sort</code>.</p>
+  <button id="run-compare" class="btn primary" type="button">Uruchom porównanie</button>
+  <div id="compare-out"></div>
+</section>
+
+<!-- ================= DANE ================= -->
+<section id="panel-dane" class="panel" hidden>
+  <h2>Scenariusze, eksport i import</h2>
+  <div class="scenarios">
+    <button class="btn primary" data-scenario="kontrolny" type="button">Wczytaj przykład kontrolny</button>
+    <button class="btn" data-scenario="typowy" type="button">Scenariusz typowy (12)</button>
+    <button class="btn" data-scenario="graniczny" type="button">Scenariusz graniczny (7)</button>
+    <button class="btn" data-scenario="duzy" type="button">Scenariusz większy (1000)</button>
+  </div>
+  <h3>Eksport</h3>
+  <p class="hint">Plik zawiera nazwę formatu i jego wersję, dlatego import wie, czy potrafi go przeczytać.</p>
+  <button id="export" class="btn" type="button">Pobierz plik JSON</button>
+  <h3>Import</h3>
+  <p class="hint">Najpierw sprawdzam cały plik. Dopiero po potwierdzeniu podmieniam zestaw, więc błędny plik nie kasuje bieżącej pracy.</p>
+  <input id="import-file" type="file" accept="application/json,.json">
+  <div id="import-report"></div>
+  <h3>Zapis w przeglądarce</h3>
+  <p class="hint">Dodatkowo trzymam kopię w pamięci przeglądarki, ale to nie zastępuje eksportu do pliku.</p>
+  <button id="forget" class="btn ghost" type="button">Wyczyść zapis lokalny</button>
+</section>
+
+<!-- ================= TESTY ================= -->
+<section id="panel-testy" class="panel" hidden>
+  <h2>Testy</h2>
+  <p class="hint">Ten sam plik testów uruchamia Node poleceniem <code>node tests/run-tests.js</code>.</p>
+  <button id="run-tests" class="btn primary" type="button">Uruchom testy</button>
+  <p id="tests-summary" class="counter"></p>
+  <div class="table-wrap"><table id="tests-table">
+    <thead><tr><th>ID</th><th>Nazwa</th><th>Wejście</th><th>Oczekiwane</th><th>Otrzymane</th><th>Status</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+</section>
+</main>
+
+<!-- ================= FORMULARZ ================= -->
+<dialog id="form-dialog">
+  <form id="project-form" method="dialog">
+    <h2 id="form-title">Nowy projekt</h2>
+    <div class="grid2">
+      <div class="field">
+        <label for="in-id">Identyfikator (A–Z, cyfry, łącznik)</label>
+        <input id="in-id" name="id" required>
+        <p class="err" id="err-id"></p>
+      </div>
+      <div class="field">
+        <label for="in-year">Rok (2000–2100)</label>
+        <input id="in-year" name="year" inputmode="numeric" required>
+        <p class="err" id="err-year"></p>
+      </div>
+    </div>
+    <div class="field">
+      <label for="in-title">Tytuł</label>
+      <input id="in-title" name="title" required>
+      <p class="err" id="err-title"></p>
+    </div>
+    <div class="field">
+      <label for="in-description">Opis</label>
+      <textarea id="in-description" name="description" rows="3" required></textarea>
+      <p class="err" id="err-description"></p>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label for="in-status">Status</label>
+        <select id="in-status" name="status"></select>
+        <p class="err" id="err-status"></p>
+      </div>
+      <div class="field">
+        <label for="in-technologies">Technologie (po przecinku)</label>
+        <input id="in-technologies" name="technologies" required>
+        <p class="err" id="err-technologies"></p>
+      </div>
+    </div>
+    <div class="field">
+      <label for="in-role">Moja rola (tu też współautorzy)</label>
+      <input id="in-role" name="role" required>
+      <p class="err" id="err-role"></p>
+    </div>
+    <div class="grid2">
+      <div class="field">
+        <label for="in-repoUrl">Adres repozytorium</label>
+        <input id="in-repoUrl" name="repoUrl" required>
+        <p class="err" id="err-repoUrl"></p>
+      </div>
+      <div class="field">
+        <label for="in-demoUrl">Adres demonstracji (opcjonalnie)</label>
+        <input id="in-demoUrl" name="demoUrl">
+        <p class="err" id="err-demoUrl"></p>
+      </div>
+    </div>
+    <p class="err form-err" id="err-form"></p>
+    <div class="form-actions">
+      <button class="btn ghost" id="form-cancel" type="button">Anuluj (Esc)</button>
+      <button class="btn primary" id="form-save" type="submit">Zapisz</button>
+    </div>
+  </form>
+</dialog>
+
+<dialog id="confirm-dialog">
+  <div class="confirm">
+    <h2 id="confirm-title">Potwierdzenie</h2>
+    <p id="confirm-text"></p>
+    <div class="form-actions">
+      <button class="btn ghost" id="confirm-no" type="button">Nie</button>
+      <button class="btn primary" id="confirm-yes" type="button">Tak, zastąp</button>
+    </div>
+  </div>
+</dialog>
+
+<p id="toast" class="toast" hidden></p>
+
+<script src="src/algorithms.js"></script>
+<script src="src/steps.js"></script>
+<script src="src/data-io.js"></script>
+<script src="src/compare.js"></script>
+<script src="tests/test-cases.js"></script>
+<script src="data/wbudowane.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>
