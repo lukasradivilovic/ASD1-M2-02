@@ -1,0 +1,180 @@
+{
+  "format": "asd1-m2-02-portfolio",
+  "version": 1,
+  "author": "Lukaš Radivilovič",
+  "exportedAt": "2026-11-22",
+  "projects": [
+    {
+      "id": "PRJ-2024-01",
+      "title": "Kalkulator ocen",
+      "description": "Liczy średnią ważoną z ocen semestralnych i pokazuje, ile brakuje do zaliczenia.",
+      "year": 2024,
+      "status": "gotowy",
+      "technologies": [
+        "Python",
+        "Tkinter"
+      ],
+      "role": "autor całości",
+      "repoUrl": "https://github.com/lukasradivilovic/kalkulator-ocen",
+      "demoUrl": ""
+    },
+    {
+      "id": "PRJ-2024-02",
+      "title": "Lista zadań",
+      "description": "Aplikacja do zapisywania zadań z terminami, z zapisem w pliku JSON.",
+      "year": 2024,
+      "status": "gotowy",
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS"
+      ],
+      "role": "autor, projekt interfejsu",
+      "repoUrl": "https://github.com/lukasradivilovic/lista-zadan",
+      "demoUrl": "https://example.org/lista-zadan"
+    },
+    {
+      "id": "PRJ-2025-01",
+      "title": "Łódź na fali",
+      "description": "Gra 2D w przeglądarce: sterowanie łodzią i omijanie przeszkód.",
+      "year": 2025,
+      "status": "gotowy",
+      "technologies": [
+        "JavaScript",
+        "Canvas"
+      ],
+      "role": "autor, grafika",
+      "repoUrl": "https://github.com/lukasradivilovic/lodz-na-fali",
+      "demoUrl": ""
+    },
+    {
+      "id": "PRJ-2025-02",
+      "title": "Baza płyt",
+      "description": "Katalog płyt z wyszukiwaniem po wykonawcy i roku wydania.",
+      "year": 2025,
+      "status": "w trakcie",
+      "technologies": [
+        "Java",
+        "SQL"
+      ],
+      "role": "autor warstwy danych, praca w parze z kolegą z grupy",
+      "repoUrl": "https://github.com/lukasradivilovic/baza-plyt",
+      "demoUrl": ""
+    },
+    {
+      "id": "PRJ-2025-03",
+      "title": "Pogoda w Wilnie",
+      "description": "Czyta zapisany plik z pomiarami i rysuje wykres temperatury z ostatniego tygodnia.",
+      "year": 2025,
+      "status": "gotowy",
+      "technologies": [
+        "Python",
+        "Matplotlib"
+      ],
+      "role": "autor całości",
+      "repoUrl": "https://github.com/lukasradivilovic/pogoda-wilno",
+      "demoUrl": ""
+    },
+    {
+      "id": "PRJ-2025-04",
+      "title": "Śledzenie wydatków",
+      "description": "Zapisuje wydatki i pokazuje, na co idzie najwięcej pieniędzy w miesiącu.",
+      "year": 2025,
+      "status": "w trakcie",
+      "technologies": [
+        "Python",
+        "SQLite"
+      ],
+      "role": "autor, testy",
+      "repoUrl": "https://github.com/lukasradivilovic/wydatki",
+      "demoUrl": ""
+    },
+    {
+      "id": "PRJ-2026-01",
+      "title": "PrefiksLab",
+      "description": "Mini-projekt M1: sumy prefiksowe i zapytania na zakresach, krok po kroku.",
+      "year": 2026,
+      "status": "gotowy",
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Node.js"
+      ],
+      "role": "autor całości, koncepcja wizualizacji",
+      "repoUrl": "https://github.com/lukasradivilovic/ASD1-M1-13",
+      "demoUrl": ""
+    },
+    {
+      "id": "PRJ-2026-02",
+      "title": "Portfolio projektów",
+      "description": "Mini-projekt M2: wyszukiwanie, filtry i własne sortowanie przez wstawianie.",
+      "year": 2026,
+      "status": "w trakcie",
+      "technologies": [
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "Node.js"
+      ],
+      "role": "autor całości",
+      "repoUrl": "https://github.com/lukasradivilovic/ASD1-M2-02",
+      "demoUrl": ""
+    },
+    {
+      "id": "PRJ-2026-03",
+      "title": "Notatnik wykładowy",
+      "description": "Notatki z wykładów z tagami i szybkim wyszukiwaniem fragmentu treści.",
+      "year": 2026,
+      "status": "planowany",
+      "technologies": [
+        "TypeScript",
+        "React"
+      ],
+      "role": "autor",
+      "repoUrl": "https://github.com/lukasradivilovic/notatnik",
+      "demoUrl": ""
+    },
+    {
+      "id": "PRJ-2026-04",
+      "title": "Quiz z sieci",
+      "description": "Pytania powtórkowe z technologii sieciowych, wynik liczony na końcu.",
+      "year": 2026,
+      "status": "planowany",
+      "technologies": [
+        "HTML",
+        "JavaScript"
+      ],
+      "role": "autor pytań i kodu",
+      "repoUrl": "https://github.com/lukasradivilovic/quiz-sieci",
+      "demoUrl": ""
+    },
+    {
+      "id": "PRJ-2023-01",
+      "title": "Żółw rysuje",
+      "description": "Pierwszy program z pierwszego semestru: rysowanie figur biblioteką turtle.",
+      "year": 2023,
+      "status": "gotowy",
+      "technologies": [
+        "Python"
+      ],
+      "role": "autor",
+      "repoUrl": "https://github.com/lukasradivilovic/zolw",
+      "demoUrl": ""
+    },
+    {
+      "id": "PRJ-2023-02",
+      "title": "Strona o Wilnie",
+      "description": "Statyczna strona z opisem miasta, zrobiona na zajęciach z podstaw HTML.",
+      "year": 2023,
+      "status": "gotowy",
+      "technologies": [
+        "HTML",
+        "CSS"
+      ],
+      "role": "autor, zdjęcia własne",
+      "repoUrl": "https://github.com/lukasradivilovic/strona-wilno",
+      "demoUrl": ""
+    }
+  ]
+}

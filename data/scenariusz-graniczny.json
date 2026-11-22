@@ -1,0 +1,99 @@
+{
+  "format": "asd1-m2-02-portfolio",
+  "version": 1,
+  "author": "Lukaš Radivilovič",
+  "exportedAt": "2026-11-22",
+  "projects": [
+    {
+      "id": "A-2000",
+      "title": "Archiwum",
+      "description": "Najstarszy dopuszczalny rok w portfolio, czyli 2000.",
+      "year": 2000,
+      "status": "gotowy",
+      "technologies": [
+        "Pascal"
+      ],
+      "role": "autor",
+      "repoUrl": "https://example.org/a2000",
+      "demoUrl": ""
+    },
+    {
+      "id": "Z-2100",
+      "title": "Zamysł",
+      "description": "Najpóźniejszy dopuszczalny rok, czyli 2100. Projekt wyłącznie na papierze.",
+      "year": 2100,
+      "status": "planowany",
+      "technologies": [
+        "brak"
+      ],
+      "role": "pomysłodawca",
+      "repoUrl": "https://example.org/z2100",
+      "demoUrl": ""
+    },
+    {
+      "id": "DUP-TECH",
+      "title": "Powtórki",
+      "description": "Rekord z powtórzoną technologią: Python, python i PYTHON to jedna pozycja.",
+      "year": 2026,
+      "status": "w trakcie",
+      "technologies": [
+        "Python"
+      ],
+      "role": "autor",
+      "repoUrl": "https://example.org/dup",
+      "demoUrl": ""
+    },
+    {
+      "id": "TIE-1",
+      "title": "Remis drugi",
+      "description": "Ten sam rok co TIE-0, więc o kolejności decyduje identyfikator.",
+      "year": 2026,
+      "status": "gotowy",
+      "technologies": [
+        "SQL"
+      ],
+      "role": "autor",
+      "repoUrl": "https://example.org/tie1",
+      "demoUrl": ""
+    },
+    {
+      "id": "TIE-0",
+      "title": "Remis pierwszy",
+      "description": "Dodany po TIE-1, ale ma mniejsze ID, więc na liście najnowszych stoi wyżej.",
+      "year": 2026,
+      "status": "gotowy",
+      "technologies": [
+        "SQL"
+      ],
+      "role": "autor",
+      "repoUrl": "https://example.org/tie0",
+      "demoUrl": ""
+    },
+    {
+      "id": "PL-ZNAKI",
+      "title": "Łódź, Żagiel i Śruba",
+      "description": "Tytuł z polskimi znakami, żeby sprawdzić własny porządek alfabetyczny.",
+      "year": 2024,
+      "status": "gotowy",
+      "technologies": [
+        "C++"
+      ],
+      "role": "autor",
+      "repoUrl": "https://example.org/pl",
+      "demoUrl": ""
+    },
+    {
+      "id": "XSS-TEST",
+      "title": "<img src=x onerror=alert(1)>",
+      "description": "Opis ze znacznikiem <b>pogrubienia</b>, który ma się pokazać jako zwykły tekst.",
+      "year": 2026,
+      "status": "planowany",
+      "technologies": [
+        "HTML"
+      ],
+      "role": "autor",
+      "repoUrl": "https://example.org/xss",
+      "demoUrl": ""
+    }
+  ]
+}

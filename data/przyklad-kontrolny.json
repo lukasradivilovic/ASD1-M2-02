@@ -1,0 +1,41 @@
+{
+  "format": "asd1-m2-02-portfolio",
+  "version": 1,
+  "author": "Lukaš Radivilovič",
+  "exportedAt": "2026-11-22",
+  "projects": [
+    {
+      "id": "A",
+      "title": "Atlas",
+      "description": "Atlas map z zajęć: wczytuje dane o regionach i rysuje je na siatce.",
+      "year": 2026,
+      "status": "gotowy",
+      "technologies": ["Python", "python", "HTML"],
+      "role": "autor całości",
+      "repoUrl": "https://github.com/lukasradivilovic/atlas",
+      "demoUrl": ""
+    },
+    {
+      "id": "B",
+      "title": "Budżet",
+      "description": "Prosty kalkulator wydatków studenckich z podsumowaniem miesiąca.",
+      "year": 2025,
+      "status": "w trakcie",
+      "technologies": ["Python"],
+      "role": "autor, współpraca przy testach",
+      "repoUrl": "https://github.com/lukasradivilovic/budzet",
+      "demoUrl": ""
+    },
+    {
+      "id": "C",
+      "title": "Gra",
+      "description": "Gra zręcznościowa w przeglądarce, projekt zaliczeniowy z programowania.",
+      "year": 2026,
+      "status": "gotowy",
+      "technologies": ["JavaScript"],
+      "role": "autor",
+      "repoUrl": "https://github.com/lukasradivilovic/gra",
+      "demoUrl": "https://example.org/gra"
+    }
+  ]
+}
