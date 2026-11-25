@@ -4,7 +4,7 @@ Mini-projekt M2 z przedmiotu Algorytmy i struktury danych I.
 
 - Autor: Lukaš Radivilovič, nr albumu 93795, kierunek Informatyka
 - Filia Uniwersytetu w Białymstoku w Wilnie, rok akademicki 2026/2027
-- Kod tematu: ASD1-M2-02, praca indywidualna
+- Kod tematu: ASD1-M2-02, praca indywidualna 
 
 ## Po co to jest
 
